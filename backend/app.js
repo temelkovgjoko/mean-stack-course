@@ -9,7 +9,9 @@ const app = express();
 
 mongoose
   .connect(
-    "mongodb+srv://angular-test:DkDx4m85l508GklF@cluster0-h7ajm.mongodb.net/node-angular?retryWrites=true&w=majority",
+    "mongodb+srv://angular-test:" +
+      process.env.MONGO_ATLAS_PW +
+      "@cluster0-h7ajm.mongodb.net/node-angular?retryWrites=true&w=majority",
     { useUnifiedTopology: true, useNewUrlParser: true, useCreateIndex: true }
   )
   .then(() => {
